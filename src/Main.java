@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,23 +11,6 @@ public class Main {
      given new programs can be scheduled or not? Each program
      is a pair of values where 1st value is the starting time
      and 2nd is the execution time.
-     */
-
-    /**
-     Understand:
-        - Will the start time ever be negative?
-        - Will the new programs list be sorted?
-        - Can I use extra space?
-
-     Match:
-        - Interval problems
-
-     Plan/Psudocode:
-        - First create the return list with the same size of
-          newPrograms
-        - for loop to go through all of the Program objects in
-          the newPrograms list
-            check if program fits into
      */
 
     /**
@@ -50,6 +35,25 @@ public class Main {
      you just return false.
      */
 
+    /**
+     Understand:
+     - Will the start time ever be negative?
+     - Will the new programs list be sorted?
+     - Can I use extra space?
+
+     scheduled = [P1(5, 6), P2(20, 9)], newPrograms = [P3(1, 2), P4(
+
+     Match:
+     - Interval problems
+
+     Plan/Psudocode:
+     - First create the return list with the same size of
+     newPrograms
+     - for loop to go through all of the Program objects in
+     the newPrograms list
+     check if program fits into it and append result into
+     */
+
     public static void main(String[] args) {
         Program p1 = new Program(10, 5);
         Program p2 = new Program(25, 25);
@@ -59,7 +63,18 @@ public class Main {
         list1.add(p2);
 
 
+    }
 
+    public static boolean[] schedule(List<Program> scheduled, List<Program> newPrograms) {
+        boolean[] result = new boolean[newPrograms.size()];
 
+        for (int i = 0; i < newPrograms.size(); i++) {
+            Program current = newPrograms.get(i);
+
+            //if we check the scheduled list linearly then we will have an O(n^2)
+            //run time
+            
+        }
+        return result;
     }
 }
